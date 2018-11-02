@@ -17,7 +17,7 @@ AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx
 &SignatureVersion=2
 &Timestamp=2018-01-01 00:00:00
 &Signature=calculated value
-##签名运算
+## 签名运算
 API 请求在通过 Internet 发送的过程中极有可能被篡改。为了确保请求未被更改，我们会要求用户在每个请求中带上签名，来校验参数或参数值在传输途中是否发生了更改。
 
 计算签名所需的步骤：
@@ -78,32 +78,39 @@ https://hotcoin.top/v1/order/cancel? AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxx
 
 symbol 规则： 基础币种+计价币种。如BTC/USDT，symbol为btc_usdt；ETH/BTC， symbol为eth_btc。以此类推。
 ## api明细
-####下单：/v1/order/place
-参数：     
+### 下单：/v1/order/place
+
+参数：
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|String|访问key|| 		
-SignatureVersion|y|String|版本		
+AccessKeyId|y|String|访问key||
+SignatureVersion|y|String|版本
 SignatureMethod|y|String|签名方法||HmacSHA256
-Signature|y|String|ApiSecret||		
-Timestamp|y|String|时间戳||		
-symbol|y|String|交易对||例：btc_usdt		
+Signature|y|String|ApiSecret||
+Timestamp|y|String|时间戳||
+symbol|y|String|交易对||例：btc_usdt
 type|y|String|类型||"buy" ,”sell"
-tradeAmount|y|BigDecimal|数量||		
-tradePrice|y|BigDecimal|价钱||		
+tradeAmount|y|BigDecimal|数量||
+tradePrice|y|BigDecimal|价钱||
 
 返回：
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 code|y|Int|状态码||成功：200，失败：300
-msg|y|String|消息||		
-time|y|long|当前毫秒数||		
-data|y|Object|数据||	
+msg|y|String|消息||
+time|y|long|当前毫秒数||
+data|y|Object|数据||
+
 data
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-ID|y|Int|订单id||	
+ID|y|Int|订单id||
+
 返回json
+
 ```json
 {
    "code": 200,
@@ -117,24 +124,29 @@ ID|y|Int|订单id||
 ```
 
 
-#### 订单取消：/v1/order/cancel
-参数：  
+### 订单取消：/v1/order/cancel
+
+参数：
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|String|访问key		
-SignatureVersion|y|String|版本		
+AccessKeyId|y|String|访问key
+SignatureVersion|y|String|版本
 SignatureMethod|y|String|签名方法||HmacSHA256
-Signature|y|String|ApiSecret		
-Timestamp|y|String|时间戳		
-id|y|Bigint|委单id	
+Signature|y|String|ApiSecret
+Timestamp|y|String|时间戳
+id|y|Bigint|委单id
 
 返回：
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 code|y|Int|状态码||成功：200，失败：300
-msg|y|String|返回消息			
-time|y|long|当前毫秒数		
+msg|y|String|返回消息
+time|y|long|当前毫秒数
+
 返回json
+
 ```json
 {
    "code": 200,
@@ -144,41 +156,47 @@ time|y|long|当前毫秒数
 }
 ```
 ### 委单详情：/v1/order/detailById
-参数：     
+
+参数：
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|String|访问key		
-SignatureVersion|y|String|版本		
+AccessKeyId|y|String|访问key
+SignatureVersion|y|String|版本
 SignatureMethod|y|String|签名方法||HmacSHA256
-Signature|y|String|ApiSecret		
-Timestamp|y|String|时间戳		
-id|y|Bigint|委单id		
+Signature|y|String|ApiSecret
+Timestamp|y|String|时间戳
+id|y|Bigint|委单id
 
 返回：
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-code|y|Int|状态码		
-msg|n|String|返回消息		
-time|y|long|当前毫秒数		
-data|y|Map|委单详情		
+code|y|Int|状态码
+msg|n|String|返回消息
+time|y|long|当前毫秒数
+data|y|Map|委单详情
 
 data
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 types|y|String|委单类型||買單 、賣單
-leftcount|y|BigDecimal|未成交		
-fees|y|BigDecimal|手续费		
-last|y|BigDecimal|成交数量		
-count|y|BigDecimal|数量		
-successamount|y|BigDecimal|已成交总价		
+leftcount|y|BigDecimal|未成交
+fees|y|BigDecimal|手续费
+last|y|BigDecimal|成交数量
+count|y|BigDecimal|数量
+successamount|y|BigDecimal|已成交总价
 source|y|String|来源||API、WEB、APP
 type|y|int|类型代码||0（买单），1（卖单）
-price|y|BigDecimal|价钱		
-buysymbol|n|String|买符号		
-sellsymbol|n|String|卖符号		
-time|y|String|创建时间		
+price|y|BigDecimal|价钱
+buysymbol|n|String|买符号
+sellsymbol|n|String|卖符号
+time|y|String|创建时间
 status|y|String|状态||未成交、部分成交、完全成交、撤單處理中、已撤銷
+
 返回json：
+
 ```json
 {
    "code": 200,
@@ -203,49 +221,57 @@ status|y|String|状态||未成交、部分成交、完全成交、撤單處理�
 }
 ```
 ### 获取委单列表：/v1/order/entrust
-参数： 
+
+参数：
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|String|访问key		
-SignatureVersion|y|String|版本		
+AccessKeyId|y|String|访问key
+SignatureVersion|y|String|版本
 SignatureMethod|y|String|签名方法|HmacSHA256
-Signature|y|String|ApiSecret		
-Timestamp|y|String|时间戳		
-symbol|y|String|交易对||例：btc_usdt		
+Signature|y|String|ApiSecret
+Timestamp|y|String|时间戳
+symbol|y|String|交易对||例：btc_usdt
 type|n|int|类型|0|0表示全部 1表示当前 2表示历史
-count|y|int|条数|7	
+count|y|int|条数|7
 
 返回：
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-code|y|int|状态码		
-msg|n|String|返回消息		
-time|y|long|当前毫秒数		
-data|y|Map|委单详情		
+code|y|int|状态码
+msg|n|String|返回消息
+time|y|long|当前毫秒数
+data|y|Map|委单详情
 
 data
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-entrutsCur|n|Array(map)|当前委单		
-entrutsHis|n|Array(map)|历史委单		
+entrutsCur|n|Array(map)|当前委单
+entrutsHis|n|Array(map)|历史委单
+
 entrutsCur 及  entrutsHis类型相同
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 id|y|BigInteger|委单id
-time|y|String|下单时间		
+time|y|String|下单时间
 types|y|String|委单类型枚举|| "買單", "賣單"
 source|y|String|委单来源||"WEB"，"APP"，"API"
-price|y|BigDecimal|下单价格		
-count|y|BigDecimal|下单数量		
-leftcount|y|BigDecimal|未成交数量		
-last|y|BigDecimal|成交价格		
-successamount|y|BigDecimal|成交总价		
-fees|y|BigDecimal|手续费		
+price|y|BigDecimal|下单价格
+count|y|BigDecimal|下单数量
+leftcount|y|BigDecimal|未成交数量
+last|y|BigDecimal|成交价格
+successamount|y|BigDecimal|成交总价
+fees|y|BigDecimal|手续费
 status|y|String|委单状态||"未成交", "部分成交", "完全成交", "撤单处理中", "已撤销"
 type|y|int|委单类型||	0( "买单"),1( "卖单")
-buysymbol|y|String|币种类型符号		
-sellsymbol|y|String|币种类型符号		
+buysymbol|y|String|币种类型符号
+sellsymbol|y|String|币种类型符号
+
 返回json
+
 ```json
 {
    "code": 200,
@@ -268,7 +294,7 @@ sellsymbol|y|String|币种类型符号
             "time": "2018-06-27 17:45:14",
             "sellsymbol": "",
             "status": "已撤銷"
-         },        
+         },
         //more data here
       ],
       "entrutsCur": [
@@ -294,25 +320,30 @@ sellsymbol|y|String|币种类型符号
 }
 ```
 ### 获取k线数据：/v1/ticker
+
 参数：
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|String|访问key		
-SignatureVersion|y|String|版本		
+AccessKeyId|y|String|访问key
+SignatureVersion|y|String|版本
 SignatureMethod|y|String|签名方法||HmacSHA256
-Signature|y|String|ApiSecret		
-Timestamp|y|String|时间戳		
+Signature|y|String|ApiSecret
+Timestamp|y|String|时间戳
 step|y|int|时间：秒||60,3*60,5*60,15*60,30*60,60*60（1小时）,24*60*60（1天）,7*24*60*60（1周）,30*24*60*60（1月）
-symbol|y|String|交易对||例：btc_gset		
+symbol|y|String|交易对||例：btc_gset
 
 返回 : 
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-code|y|int|状态码		
-msg|n|String|返回消息		
-time|y|long|当前毫秒数		
+code|y|int|状态码
+msg|n|String|返回消息
+time|y|long|当前毫秒数
 data|y|Array(Array(int))|K线数据
+
 返回json
+
 ```json
 {
    "code": 200,
@@ -333,43 +364,55 @@ data|y|Array(Array(int))|K线数据
 ```
 
 ### 获取深度数据：/v1/depth
-参数：   
+
+参数：
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|String|访问key		
-SignatureVersion|y|String|版本		
+AccessKeyId|y|String|访问key
+SignatureVersion|y|String|版本
 SignatureMethod|y|String|签名方法||HmacSHA256
-Signature|y|String|ApiSecret		
-Timestamp|y|String|时间戳		
+Signature|y|String|ApiSecret
+Timestamp|y|String|时间戳
 step|y|int|时间：秒||60,3*60,5*60,15*60,30*60,60*60（1小时）,24*60*60（1天）,7*24*60*60（1周）,30*24*60*60（1月）
-symbol|y|String|交易对||例：btc_gset		
-返回 : 
+symbol|y|String|交易对||例：btc_gset
+
+返回 :
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-code|y|int|状态码		
-msg|n|String|返回消息		
-time|y|long|当前毫秒数		
-data|y|Map|交易深度数据		
+code|y|int|状态码
+msg|n|String|返回消息
+time|y|long|当前毫秒数
+data|y|Map|交易深度数据
+
 data
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-depth|y|map			
-period|y|map|入参step大于0时才有值		
-period  
+depth|y|map
+period|y|map|入参step大于0时才有值
+
+period
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-marketFrom|y|String|入参symbol		
-coinVol|y|String|入参symbol		
-type|y|long|入参step,时间		
-data|y|Array（Array）|最后一个k线数据，格式同上，但只有一个		
+marketFrom|y|String|入参symbol
+coinVol|y|String|入参symbol
+type|y|long|入参step,时间
+data|y|Array（Array）|最后一个k线数据，格式同上，但只有一个
+
 depth
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-bids|y|Array(Array(long))|买盘,[price(成交价), amount(成交量)]		
-asks|y|Array(Array(long))|卖盘,[price(成交价), amount(成交量)]		
-date|y|long|时间戳		
-lastPrice|y|BigDecimal|上次成交价		
+bids|y|Array(Array(long))|买盘,[price(成交价), amount(成交量)]
+asks|y|Array(Array(long))|卖盘,[price(成交价), amount(成交量)]
+date|y|long|时间戳
+lastPrice|y|BigDecimal|上次成交价
+
 返回json
+
 ```json
 {
    "code": 200,
@@ -408,40 +451,49 @@ lastPrice|y|BigDecimal|上次成交价
 }
 ```
 ### 获取 Trade Detail 数据：/v1/trade
-参数：     
+
+参数：
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|String|访问key		
-SignatureVersion|y|String|版本		
+AccessKeyId|y|String|访问key
+SignatureVersion|y|String|版本
 SignatureMethod|y|String|签名方法||HmacSHA256
-Signature|y|String|ApiSecret		
-Timestamp|y|String|时间戳		
-count|y|int|Trades条数||0	 
-symbol|y|String|交易对||例：btc_gset		
+Signature|y|String|ApiSecret
+Timestamp|y|String|时间戳
+count|y|int|Trades条数||0
+symbol|y|String|交易对||例：btc_gset
 
 返回 : 
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-code|y|int|状态码		
-msg|n|String|返回消息		
-time|y|long|当前毫秒数		
-data|y|Map|交易深度数据		
+code|y|int|状态码
+msg|n|String|返回消息
+time|y|long|当前毫秒数
+data|y|Map|交易深度数据
+
 data
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-trades|y|Array(map)|trades数据			
-sellSymbol|y|String|sellShortName		
-buySymbol|y|String|buyShortName	
+trades|y|Array(map)|trades数据
+sellSymbol|y|String|sellShortName
+buySymbol|y|String|buyShortName
+
 trades
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-price|y|long|成交价钱		
-amount|y|String|成交数量		
+price|y|long|成交价钱
+amount|y|String|成交数量
 id|y|String|成交id
-time|y|String|成交时间			
-en_type|y|String|成交方向||"bid","ask"		
+time|y|String|成交时间
+en_type|y|String|成交方向||"bid","ask"
 type|y|String|成交类型||"买入","卖出"
+
 返回json
+
 ```json
 {
  "code": 200,
@@ -467,40 +519,47 @@ type|y|String|成交类型||"买入","卖出"
 ```
 
 获取用户余额：/v1/balance
-参数：   
+
+参数：
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|String|访问key		
-SignatureVersion|y|String|版本		
+AccessKeyId|y|String|访问key
+SignatureVersion|y|String|版本
 SignatureMethod|y|String|签名方法||HmacSHA256
-Signature|y|String|ApiSecret		
-Timestamp|y|String|时间戳		
+Signature|y|String|ApiSecret
+Timestamp|y|String|时间戳
 
 返回 : 
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-code|y|int|状态码		
-msg|n|String|返回消息		
-time|y|long|当前毫秒数		
-data|y|map|交易深度数据		
+code|y|int|状态码
+msg|n|String|返回消息
+time|y|long|当前毫秒数
+data|y|map|交易深度数据
+
 data
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-netassets|y|BigDecimal|净资产		
-totalassets|y|BigDecimal|总资产		
-wallet|y|Array(map)|钱包列表		
+netassets|y|BigDecimal|净资产
+totalassets|y|BigDecimal|总资产
+wallet|y|Array(map)|钱包列表
+
 wallet
+
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-id|y|int|主键ID		
-uid|y|int|用户ID		
-coinId|y|int|币种ID		
-total|y|BigDecimal|可用		
-frozen|y|BigDecimal|冻结		
-borrow|y|BigDecimal|理财		
-ico|y|BigDecimal|ico		
-gmtCreate|y|long|创建时间		
-gmtModified|y|long|更新时间		
+id|y|int|主键ID
+uid|y|int|用户ID
+coinId|y|int|币种ID
+total|y|BigDecimal|可用
+frozen|y|BigDecimal|冻结
+borrow|y|BigDecimal|理财
+ico|y|BigDecimal|ico
+gmtCreate|y|long|创建时间
+gmtModified|y|long|更新时间
 
 返回json
 ```json
