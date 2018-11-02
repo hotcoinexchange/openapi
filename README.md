@@ -295,7 +295,7 @@ sellsymbol|y|String|币种类型符号
             "sellsymbol": "",
             "status": "已撤銷"
          },
-        //more data here
+        ......
       ],
       "entrutsCur": [
          {
@@ -314,7 +314,7 @@ sellsymbol|y|String|币种类型符号
          "sellsymbol": "",
          "status": "未成交"
       },
-         //more data here
+        ......
       ]
    }
 }
@@ -358,7 +358,7 @@ data|y|Array(Array(int))|K线数据
          54598.5,         //float  收
          0               //float  量
       ],
-     //More data here
+     ......
 	]
 }
 ```
@@ -443,7 +443,7 @@ lastPrice|y|BigDecimal|上次成交价
                57751.26,
                0.0128
             ],
-            //More data here
+            ......
          ],
          "lastPrice": 54598.5
       }
@@ -499,7 +499,7 @@ type|y|String|成交类型||"买入","卖出"
  "code": 200,
  "msg": "成功",
    "time": 1536315868962,
-   "data":    {.
+   "data":    {
      "sellSymbol": "BTC",
      "buySymbol": "GSET",
      "trades": [
@@ -511,7 +511,7 @@ type|y|String|成交类型||"买入","卖出"
           "en_type": "ask",
           "type": "卖出"
        }, 
-//More data here
+		......
 }
 ]
    }
@@ -587,7 +587,7 @@ gmtModified|y|long|更新时间
             "shortName": "BTC",
             "logo": null
          },
-         More data here
+         ......
       ],
       "totalassets": 0
    }
