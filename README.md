@@ -374,16 +374,16 @@ data|y|Array(Array(int))|K线数据
 
 data<br>
 
-[[
-   1527820200000,   //int 时间
-   54598.5,         //float  开
-   54598.5,         //float  高
-   54598.5,         //float  低
-   54598.5,         //float  收
-   0               //float  量
-   ],
-   ......
-]
+[[<br>
+   1527820200000,   //int 时间<br>
+   54598.5,         //float  开<br>
+   54598.5,         //float  高<br>
+   54598.5,         //float  低<br>
+   54598.5,         //float  收<br>
+   0               //float  量<br>
+   ],<br>
+   ......<br>
+]<br>
 
 
 返回json
