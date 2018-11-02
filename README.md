@@ -295,7 +295,22 @@ sellsymbol|y|String|币种类型符号
             "sellsymbol": "",
             "status": "已撤銷"
          },
-        ......
+         {
+            "types": "賣單",
+            "leftcount": 1.0E-4,
+            "fees": 0,
+            "last": 0,
+            "count": 1.0E-4,
+            "successamount": 0,
+            "source": "WEB",
+            "type": 1,
+            "price": 1.0E7,
+            "buysymbol": "",
+            "id": 947645,
+            "time": "2018-06-27 17:45:14",
+            "sellsymbol": "",
+            "status": "已撤銷"
+          }
       ],
       "entrutsCur": [
          {
@@ -313,8 +328,23 @@ sellsymbol|y|String|币种类型符号
          "time": "2018-09-07 15:48:44",
          "sellsymbol": "",
          "status": "未成交"
-      },
-        ......
+		},
+       {
+         "types": "買單",
+         "leftcount": 0.01,
+         "fees": 0,
+         "last": 0,
+         "count": 0.01,
+         "successamount": 0,
+         "source": "API",
+         "type": 0,
+         "price": 40000,
+         "buysymbol": "",
+         "id": 18194814,
+         "time": "2018-09-07 15:48:44",
+         "sellsymbol": "",
+         "status": "未成交"
+		}
       ]
    }
 }
@@ -342,6 +372,19 @@ msg|n|String|返回消息
 time|y|long|当前毫秒数
 data|y|Array(Array(int))|K线数据
 
+data
+[[
+   1527820200000,   //int 时间
+   54598.5,         //float  开
+   54598.5,         //float  高
+   54598.5,         //float  低
+   54598.5,         //float  收
+   0               //float  量
+   ],
+   ......
+]
+
+
 返回json
 
 ```json
@@ -358,7 +401,14 @@ data|y|Array(Array(int))|K线数据
          54598.5,         //float  收
          0               //float  量
       ],
-     ......
+      [
+         1527820200000,   //int 时间
+         54598.5,         //float  开
+         54598.5,         //float  高
+         54598.5,         //float  低
+         54598.5,         //float  收
+         0               //float  量
+      ]
 	]
 }
 ```
@@ -443,7 +493,10 @@ lastPrice|y|BigDecimal|上次成交价
                57751.26,
                0.0128
             ],
-            ......
+             [
+               57751.26,
+               0.0128
+            ]
          ],
          "lastPrice": 54598.5
       }
@@ -511,9 +564,16 @@ type|y|String|成交类型||"买入","卖出"
           "en_type": "ask",
           "type": "卖出"
        }, 
-	 ......
+	   {
+          "price": 0.007,
+          "amount": 66491.04,
+          "id": 1,
+          "time": "02:45:08",
+          "en_type": "ask",
+          "type": "卖出"
+       }
 
-]
+	]
    }
 }
 ```
@@ -587,7 +647,23 @@ gmtModified|y|long|更新时间
             "shortName": "BTC",
             "logo": null
          },
-         ......
+         {
+            "id": 1,
+            "uid": 1,
+            "coinId": 1,
+            "total": 0,
+            "frozen": 0,
+            "borrow": 0,
+            "ico": 0,
+            "gmtCreate": 1507626798000,
+            "gmtModified": 1507626798000,
+            "loginName": null,
+            "nickName": null,
+            "realName": null,
+            "coinName": "比特币",
+            "shortName": "BTC",
+            "logo": null
+         }
       ],
       "totalassets": 0
    }
