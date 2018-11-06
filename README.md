@@ -18,65 +18,65 @@ AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx <br>
 &Timestamp=2018-01-01 00:00:00 <br>
 &Signature=calculated value <br>
 ## 签名运算
-API 请求在通过 Internet 发送的过程中极有可能被篡改。为了确保请求未被更改，我们会要求用户在每个请求中带上签名，来校验参数或参数值在传输途中是否发生了更改。
+API 请求在通过 Internet 发送的过程中极有可能被篡改。为了确保请求未被更改，我们会要求用户在每个请求中带上签名，来校验参数或参数值在传输途中是否发生了更改。<br>
 
-计算签名所需的步骤：
-规范要计算签名的请求
-因为使用 HMAC 进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。下面以查询某订单详情请求为例进行说明
+计算签名所需的步骤：<br>
+规范要计算签名的请求 <br>
+因为使用 HMAC 进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。下面以查询某订单详情请求为例进行说明 <br>
 
-https://hkapi.hotcoin.top/v1/order/cancel?
-AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx
-&id=1234567890
-&SignatureMethod=HmacSHA256
-&SignatureVersion=2
-&Timestamp=2017-05-11T15:19:30
-请求方法（GET 或 POST），后面添加换行符\n。
-GET\n
-添加小写的访问地址，后面添加换行符\n。
-hkapi.hotcoin.top\n
-访问方法的路径，后面添加换行符\n。
-/ v1/order/cancel \n
-按照ASCII码的顺序对参数名进行排序(使用 UTF-8 编码，且进行了 URI 编码，十六进制字符必须大写，如‘:’会被编码为'%3A'，空格被编码为'%20')。
-例如，下面是请求参数的原始顺序，进行过编码后。
+https://hkapi.hotcoin.top/v1/order/cancel? <br>
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx <br>
+&id=1234567890 <br>
+&SignatureMethod=HmacSHA256 <br>
+&SignatureVersion=2 <br>
+&Timestamp=2017-05-11T15:19:30 <br>
+请求方法（GET 或 POST），后面添加换行符\n。 <br>
+GET\n <br>
+添加小写的访问地址，后面添加换行符\n。 <br>
+hkapi.hotcoin.top\n <br>
+访问方法的路径，后面添加换行符\n。<br>
+/v1/order/cancel\n <br>
+按照ASCII码的顺序对参数名进行排序(使用 UTF-8 编码，且进行了 URI 编码，十六进制字符必须大写，如‘:’会被编码为'%3A'，空格被编码为'%20')。<br>
+例如，下面是请求参数的原始顺序，进行过编码后。<br>
 
-AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx
-SignatureMethod=HmacSHA256
-SignatureVersion=2
-Timestamp=2017-05-11%2015%3A19%3A30
-id=1234567890
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx <br>
+SignatureMethod=HmacSHA256 <br>
+SignatureVersion=2 <br>
+Timestamp=2017-05-11%2015%3A19%3A30 <br>
+id=1234567890 <br>
 
-这些参数会被排序为：
+这些参数会被排序为：<br>
 
-AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx
-id=1234567890
-SignatureMethod=HmacSHA256
-SignatureVersion=2
-Timestamp=2017-05-11%2015%3A19%3A30
-按照以上顺序，将各参数使用字符’&’连接。
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx <br>
+id=1234567890 <br>
+SignatureMethod=HmacSHA256 <br>
+SignatureVersion=2 <br>
+Timestamp=2017-05-11%2015%3A19%3A30 <br>
+按照以上顺序，将各参数使用字符’&’连接。<br>
 
-AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&order-id=1234567890
-组成最终的要进行签名计算的字符串如下：
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&order-id=1234567890 <br>
+组成最终的要进行签名计算的字符串如下：<br>
 
-GET\n
-hkapi.hotcoin.top\n
-/v1/order/cancel\n
-AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11%2015%3A19%3A30
-计算签名，将以下两个参数传入加密哈希函数：
-要进行签名计算的字符串
-GET\n
-hkapi.hotcoin.top\n
-hkapi.hotcoin.top\n
-AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30
-进行签名的密钥（SecretKey）
-b0xxxxxx-c6xxxxxx-94xxxxxx-dxxxx
-得到签名计算结果并进行 Base64编码
-4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o=
-将上述值作为参数Signature的取值添加到 API 请求中。 将此参数添加到请求时，必须将该值进行 URI 编码。
-最终，发送到服务器的 API 请求应该为：
+GET\n <br>
+hkapi.hotcoin.top\n <br>
+/v1/order/cancel\n <br>
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11%2015%3A19%3A30 <br>
+计算签名，将以下两个参数传入加密哈希函数： <br>
+要进行签名计算的字符串 <br>
+GET\n <br>
+hkapi.hotcoin.top\n <br>
+hkapi.hotcoin.top\n <br>
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30 <br>
+进行签名的密钥（SecretKey）<br>
+b0xxxxxx-c6xxxxxx-94xxxxxx-dxxxx <br>
+得到签名计算结果并进行 Base64编码 <br>
+4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o= <br>
+将上述值作为参数Signature的取值添加到 API 请求中。 将此参数添加到请求时，必须将该值进行 URI 编码。<br>
+最终，发送到服务器的 API 请求应该为：<br>
 
-https://hotcoin.top/v1/order/cancel? AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&Signature=4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o=
+https://hotcoin.top/v1/order/cancel? AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&Signature=4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o= <br>
 
-symbol 规则： 基础币种+计价币种。如BTC/USDT，symbol为btc_usdt；ETH/BTC， symbol为eth_btc。以此类推。
+symbol 规则： 基础币种+计价币种。如BTC/USDT，symbol为btc_usdt；ETH/BTC， symbol为eth_btc。以此类推。<br>
 ## api明细
 ### 下单：/v1/order/place
 
