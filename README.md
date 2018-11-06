@@ -30,12 +30,19 @@ AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx <br>
 &SignatureMethod=HmacSHA256 <br>
 &SignatureVersion=2 <br>
 &Timestamp=2017-05-11T15:19:30 <br>
+
 请求方法（GET 或 POST），后面添加换行符\n。 <br>
+
 GET\n <br>
+
 添加小写的访问地址，后面添加换行符\n。 <br>
+
 hkapi.hotcoin.top\n <br>
+
 访问方法的路径，后面添加换行符\n。<br>
+
 /v1/order/cancel\n <br>
+
 按照ASCII码的顺序对参数名进行排序(使用 UTF-8 编码，且进行了 URI 编码，十六进制字符必须大写，如‘:’会被编码为'%3A'，空格被编码为'%20')。<br>
 例如，下面是请求参数的原始顺序，进行过编码后。<br>
 
@@ -52,25 +59,34 @@ id=1234567890 <br>
 SignatureMethod=HmacSHA256 <br>
 SignatureVersion=2 <br>
 Timestamp=2017-05-11%2015%3A19%3A30 <br>
+
 按照以上顺序，将各参数使用字符’&’连接。<br>
 
 AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&order-id=1234567890 <br>
+
 组成最终的要进行签名计算的字符串如下：<br>
 
 GET\n <br>
 hkapi.hotcoin.top\n <br>
 /v1/order/cancel\n <br>
 AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11%2015%3A19%3A30 <br>
+
 计算签名，将以下两个参数传入加密哈希函数： <br>
 要进行签名计算的字符串 <br>
+
 GET\n <br>
 hkapi.hotcoin.top\n <br>
 hkapi.hotcoin.top\n <br>
 AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30 <br>
+
 进行签名的密钥（SecretKey）<br>
+
 b0xxxxxx-c6xxxxxx-94xxxxxx-dxxxx <br>
+
 得到签名计算结果并进行 Base64编码 <br>
+
 4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o= <br>
+
 将上述值作为参数Signature的取值添加到 API 请求中。 将此参数添加到请求时，必须将该值进行 URI 编码。<br>
 最终，发送到服务器的 API 请求应该为：<br>
 
