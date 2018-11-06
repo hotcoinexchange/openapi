@@ -3,20 +3,20 @@
 目前关于apikey申请和修改，请在“账户 - API管理”页面进行相关操作。其中AccessKey为API 访问密钥，SecretKey为用户对请求进行签名的密钥。
 重要提示：这两个密钥与账号安全紧密相关，无论何时都请勿向其它人透露
 ## 合法请求结构
-基于安全考虑，除行情API 外的 API 请求都必须进行签名运算。一个合法的请求由以下几部分组成：
-方法请求地址,即访问服务器地址：hkapi.hotcoin.top后面跟上方法名，比如hkapi.hotcoin.top/v1/balance。
-API 访问密钥（AccessKeyId） 您申请的 APIKEY 中的AccessKey。
-签名方法（SignatureMethod） 用户计算签名的基于哈希的协议，此处使用 HmacSHA256。
-签名版本（SignatureVersion） 签名协议的版本，此处使用2。
-时间戳（Timestamp） 您发出请求的时间 (UTC 时区) (UTC 时区) (UTC 时区)。在查询请求中包含此值有助于防止第三方截取您的请求。如：2017-05-11 16:22:06。 调用的必需参数和可选参数。可以在每个方法的说明中查看这些参数及其含义。签名计算得出的值，用于确保签名有效和未被篡改。
-例：
-https://hkapi.hotcoin.top/v1/order/cancel?
-AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx
-&id=1234567890
-&SignatureMethod=HmacSHA256
-&SignatureVersion=2
-&Timestamp=2018-01-01 00:00:00
-&Signature=calculated value
+基于安全考虑，除行情API 外的 API 请求都必须进行签名运算。一个合法的请求由以下几部分组成：<br>
+方法请求地址,即访问服务器地址：hkapi.hotcoin.top后面跟上方法名，比如hkapi.hotcoin.top/v1/balance。<br>
+API 访问密钥（AccessKeyId） 您申请的 APIKEY 中的AccessKey。<br>
+签名方法（SignatureMethod） 用户计算签名的基于哈希的协议，此处使用 HmacSHA256。<br>
+签名版本（SignatureVersion） 签名协议的版本，此处使用2。<br>
+时间戳（Timestamp） 您发出请求的时间 (UTC 时区) (UTC 时区) (UTC 时区)。在查询请求中包含此值有助于防止第三方截取您的请求。如：2017-05-11 16:22:06。 调用的必需参数和可选参数。可以在每个方法的说明中查看这些参数及其含义。签名计算得出的值，用于确保签名有效和未被篡改。 <br>
+例：<br>
+https://hkapi.hotcoin.top/v1/order/cancel? <br>
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx <br>
+&id=1234567890 <br>
+&SignatureMethod=HmacSHA256 <br>
+&SignatureVersion=2 <br>
+&Timestamp=2018-01-01 00:00:00 <br>
+&Signature=calculated value <br>
 ## 签名运算
 API 请求在通过 Internet 发送的过程中极有可能被篡改。为了确保请求未被更改，我们会要求用户在每个请求中带上签名，来校验参数或参数值在传输途中是否发生了更改。
 
