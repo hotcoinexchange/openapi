@@ -62,7 +62,7 @@ Timestamp=2017-05-11%2015%3A19%3A30 <br>
 
 按照以上顺序，将各参数使用字符’&’连接。<br>
 
-AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&order-id=1234567890 <br>
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30 <br>
 
 组成最终的要进行签名计算的字符串如下：<br>
 
