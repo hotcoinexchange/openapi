@@ -37,7 +37,7 @@ public class ApiDemo  {
     /**
      * 请求地址
      */
-    private final static String HOST = "api.hotcoin.top";
+    private final static String HOST = "hkapi.hotcoin.top";
     
     /**
      * 配置你的KEY
