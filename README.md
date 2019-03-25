@@ -686,6 +686,52 @@ gmtModified|y|long|更新时间
    }
 }
 ```
+### 下单：/v1/order/place
+
+参数：
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+AccessKeyId|y|String|访问key||
+SignatureVersion|y|String|版本
+SignatureMethod|y|String|签名方法||HmacSHA256
+Signature|y|String|ApiSecret||
+Timestamp|y|String|时间戳||
+symbol|y|String|交易对||例：btc_usdt
+type|y|String|类型||"buy" ,”sell"
+tradeAmount|y|BigDecimal|数量||
+tradePrice|y|BigDecimal|价钱||
+leverAcctid|y|String|杠杆子账户id，对应开户接口的clientId||
+
+返回：
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+code|y|Int|状态码||成功：200，失败：300
+msg|y|String|消息||
+time|y|long|当前毫秒数||
+data|y|Object|数据||
+
+data
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+ID|y|Int|订单id||
+
+返回json
+
+```json
+{
+   "code": 200,
+   "msg": "委託成功",
+   "time": 1536306331399,
+   "data":
+        {
+            "ID": 18194813
+        }
+}
+```
+
 
 
 
