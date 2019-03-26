@@ -686,7 +686,7 @@ gmtModified|y|long|更新时间
    }
 }
 ```
-### 下单：/v1/order/leverorder
+### 杠杆下单：/v1/order/leverorder
 
 参数：
 
