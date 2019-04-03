@@ -731,7 +731,38 @@ ID|y|Int|订单id||
         }
 }
 ```
+### 订单取消：/v1/order/levercancel
 
+参数：
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+AccessKeyId|y|String|访问key
+SignatureVersion|y|String|版本
+SignatureMethod|y|String|签名方法||HmacSHA256
+Signature|y|String|ApiSecret
+Timestamp|y|String|时间戳
+id|y|Bigint|委单id
+leverAcctid|y|String|杠杆子账户id，对应开户接口的clientId||
+
+返回：
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+code|y|Int|状态码||成功：200，失败：300
+msg|y|String|返回消息
+time|y|long|当前毫秒数
+
+返回json
+
+```json
+{
+   "code": 200,
+   "msg": "取消成功",
+   "time": 1536306495984,
+   "data": null
+}
+```
 
 
 
