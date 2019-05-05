@@ -183,6 +183,8 @@ SignatureMethod|y|String|签名方法||HmacSHA256
 Signature|y|String|ApiSecret
 Timestamp|y|String|时间戳
 id|y|Bigint|委单id
+leverAcctid|y|String|杠杆子账户id，对应开户接口的clientId||
+
 
 返回：
 
@@ -764,5 +766,96 @@ time|y|long|当前毫秒数
 }
 ```
 
+获取用户余额：/v1/leverbalance
 
+参数：
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+AccessKeyId|y|String|访问key
+SignatureVersion|y|String|版本
+SignatureMethod|y|String|签名方法||HmacSHA256
+Signature|y|String|ApiSecret
+Timestamp|y|String|时间戳
+leverAcctid|y|String|杠杆子账户id，对应开户接口的clientId||
+
+返回 : 
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+code|y|int|状态码
+msg|n|String|返回消息
+time|y|long|当前毫秒数
+data|y|map|交易深度数据
+
+data
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+netassets|y|BigDecimal|净资产
+totalassets|y|BigDecimal|总资产
+wallet|y|Array(map)|钱包列表
+
+wallet
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+id|y|int|主键ID
+uid|y|int|用户ID
+coinId|y|int|币种ID
+total|y|BigDecimal|可用
+frozen|y|BigDecimal|冻结
+borrow|y|BigDecimal|理财
+ico|y|BigDecimal|ico
+gmtCreate|y|long|创建时间
+gmtModified|y|long|更新时间
+
+返回json
+```json
+{
+   "code": 200,
+   "msg": "成功",
+   "time": 1527835756743,
+   "data":    {
+      "netassets": 0,
+      "wallet": [
+          {
+            "id": 1,
+            "uid": 1,
+            "coinId": 1,
+            "total": 0,
+            "frozen": 0,
+            "borrow": 0,
+            "ico": 0,
+            "gmtCreate": 1507626798000,
+            "gmtModified": 1507626798000,
+            "loginName": null,
+            "nickName": null,
+            "realName": null,
+            "coinName": "比特币",
+            "shortName": "BTC",
+            "logo": null
+         },
+         {
+            "id": 1,
+            "uid": 1,
+            "coinId": 1,
+            "total": 0,
+            "frozen": 0,
+            "borrow": 0,
+            "ico": 0,
+            "gmtCreate": 1507626798000,
+            "gmtModified": 1507626798000,
+            "loginName": null,
+            "nickName": null,
+            "realName": null,
+            "coinName": "比特币",
+            "shortName": "BTC",
+            "logo": null
+         }
+      ],
+      "totalassets": 0
+   }
+}
+```
 
