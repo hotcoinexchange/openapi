@@ -202,7 +202,7 @@ data
 types|y|String|委单类型||買單 、賣單
 leftcount|y|BigDecimal|未成交
 fees|y|BigDecimal|手续费
-last|y|BigDecimal|成交数量
+last|y|BigDecimal|当前委单最新成交价
 count|y|BigDecimal|数量
 successamount|y|BigDecimal|已成交总价
 source|y|String|来源||API、WEB、APP
