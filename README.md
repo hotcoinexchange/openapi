@@ -76,7 +76,7 @@ AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&id=1234567890&SignatureMethod=HmacS
 
 GET\n <br>
 hkapi.hotcoin.top\n <br>
-hkapi.hotcoin.top\n <br>
+/v1/order/cancel\n <br>
 AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30 <br>
 
 进行签名的密钥（SecretKey）<br>
