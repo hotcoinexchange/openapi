@@ -532,7 +532,7 @@ lastPrice|y|BigDecimal|上次成交价
                57751.26,
                0.0128
             ]
-         ]，
+         ],
          "lastPrice": 54598.5
       }
    }
