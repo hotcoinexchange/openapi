@@ -9,7 +9,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Base64;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -55,13 +60,13 @@ public class ApiDemo  {
     	params.put("AccessKeyId", ACCESS_KEY);
     	params.put("SignatureVersion", VERSION);
     	params.put("SignatureMethod", HmacSHA256);
-    	params.put("Timestamp", new Date().getTime());
+    	params.put("Timestamp",format(getUTCTime(), "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"));
     	params.put("symbol", "btc_gavc");
     	params.put("type", "buy");
     	params.put("tradePrice", 40000);
     	params.put("tradeAmount", 0.01);
-    	String Signature = getSignature(SECRET_KEY, HOST, uri, httpMethod, params);
-    	params.put("Signature", Signature);
+    	String signature = getSignature(SECRET_KEY, HOST, uri, httpMethod, params);
+    	params.put("Signature", signature);
     	doHttpRequest(HOST, uri, httpMethod, params);
 	}
     
@@ -145,4 +150,22 @@ public class ApiDemo  {
             throw new IllegalArgumentException("UTF-8 encoding not supported!");
         }
     }
+	
+	public static String format(Date date,String pattern) {
+		Instant instant = date.toInstant();
+	    ZoneId zone = ZoneId.systemDefault();
+	    LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, zone);
+	    return DateTimeFormatter.ofPattern(pattern).format(localDateTime);
+	}
+	
+
+   public static Date getUTCTime(){
+		Calendar cal = Calendar.getInstance();
+		//获得时区和 GMT-0 的时间差,偏移量
+		int offset = cal.get(Calendar.ZONE_OFFSET);
+		//获得夏令时  时差
+		int dstoff = cal.get(Calendar.DST_OFFSET);
+		cal.add(Calendar.MILLISECOND, - (offset + dstoff));
+		return cal.getTime();
+   }
 }

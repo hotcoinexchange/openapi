@@ -6,6 +6,7 @@ import urllib.parse
 import urllib.request
 import requests
 import time
+from datetime import datetime
 
 ##########################################
 # 配置你的KEY
@@ -35,13 +36,15 @@ def http_post_request(url, params, timeout=10):
         return
 
 
+def get_utc_str():
+    return datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3] + 'Z'
+
 def api_key_post(params, API_URI, timeout=10):
-    method = 'post'
-    timestamp = int(time.time())
+    method = 'POST'
     params_to_sign = {'AccessKeyId': ACCESS_KEY,
                       'SignatureMethod': 'HmacSHA256',
                       'SignatureVersion': '2',
-                      'Timestamp': timestamp}
+                      'Timestamp': get_utc_str()}
     host_name = urllib.parse.urlparse(API_RUL).hostname
     host_name = host_name.lower()
     paramsPrefix = {"host": host_name, 'method': method, 'uri': API_URI}
@@ -62,12 +65,9 @@ def order_send(symbol, op_type, price, volume, timeout=10):
 
 
 if __name__ == "__main__":
-    count = 0
-    while True:
-        symbol = 'btc_gavc'
-        price = 0.1
-        volume = 1000
-        print(order_send(symbol, 'buy', price, volume, timeout=10))
-        print(order_send(symbol, 'sell', price, volume, timeout=10))
-        count += 1
-        print(symbol, ' 双向交易次数:', count)
+    symbol = 'btc_gavc'
+    price = 0.1
+    volume = 40000
+    print(order_send(symbol, 'buy', price, volume, timeout=10))
+
+     
