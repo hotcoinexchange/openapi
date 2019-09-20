@@ -40,7 +40,7 @@ AccessKeyId=AccessKeyHotcoin123456789 <br>
 
 请求方法（GET 或 POST），后面添加换行符\n。 <br>
 
-POST\n <br>
+GET\n <br>
 
 添加小写的访问地址，后面添加换行符\n。 <br>
 
@@ -79,7 +79,7 @@ AccessKeyId=AccessKeyHotcoin123456789&id=1234567890&SignatureMethod=HmacSHA256&S
 
 组成最终的要进行签名计算的字符串如下：<br>
 
-POST\n <br>
+GET\n <br>
 hkapi.hotcoin.top\n <br>
 /v1/order/place\n <br>
 AccessKeyId=AccessKeyHotcoin123456789&id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T16%3A22%3A06.123Z&symbol=btc_gavc&tradeAmount=0.1&tradePrice=40000&type=buy <br>
@@ -87,7 +87,7 @@ AccessKeyId=AccessKeyHotcoin123456789&id=1234567890&SignatureMethod=HmacSHA256&S
 计算签名，将以下两个参数传入加密哈希函数： <br>
 要进行签名计算的字符串 <br>
 
-POST\n <br>
+GET\n <br>
 hkapi.hotcoin.top\n <br>
 /v1/order/place\n <br>
 AccessKeyId=AccessKeyHotcoin123456789&id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T16%3A22%3A06.123Z&symbol=btc_gavc&tradeAmount=0.1&tradePrice=40000&type=buy <br>
@@ -98,12 +98,12 @@ SecretKeyHotcoin123456789 <br>
 
 得到签名计算结果并进行 Base64编码 <br>
 
-rIllxxjqen7XGx1KrZgzy8KaHw9lYhM7HjxrdqU/ydk= <br>
+2oEC+yhkHTsNkgPUq4ZB/5mlY7EZAtUDWOQ5EO01D+I= <br>
 
 将上述值作为参数Signature的取值添加到 API 请求中。 将此参数添加到请求时，必须将该值进行 URI 编码。<br>
 最终，发送到服务器的 API 请求应该为：<br>
 
-https://hotcoin.top/v1/order/place?AccessKeyId=AccessKeyHotcoin123456789&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T16%3A22%3A06.123Z&symbol=btc_gavc&tradeAmount=0.1&tradePrice=40000&type=buy&Signature=rIllxxjqen7XGx1KrZgzy8KaHw9lYhM7HjxrdqU%2Fydk%3D <br>
+https://hotcoin.top/v1/order/place?AccessKeyId=AccessKeyHotcoin123456789&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T16%3A22%3A06.123Z&symbol=btc_gavc&tradeAmount=0.1&tradePrice=40000&type=buy&Signature=2oEC%2ByhkHTsNkgPUq4ZB%2F5mlY7EZAtUDWOQ5EO01D%2BI%3D <br>
 
 symbol 规则： 基础币种+计价币种。如BTC/USDT，symbol为btc_usdt；ETH/BTC， symbol为eth_btc。以此类推。<br>
 ## api明细
