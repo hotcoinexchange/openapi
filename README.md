@@ -196,7 +196,7 @@ SignatureMethod|y|string|签名方法||HmacSHA256
 Signature|y|string|ApiSecret
 Timestamp|y|string|时间戳
 id|y|bigint|委单id
-leverAcctid|y|string|杠杆子账户id，对应开户接口的clientId||
+leverAcctid|n|string|非杠杆下单无需传词字段，杠杆子账户id，对应开户接口的clientId||
 
 
 返回：
