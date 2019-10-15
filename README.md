@@ -555,7 +555,7 @@ depth
 bids|y|array(array(long))|买盘,[price(成交价), amount(成交量)]
 asks|y|array(array(long))|卖盘,[price(成交价), amount(成交量)]
 date|y|long|时间戳
-lastPrice|y|decimal|上次成交价
+lastPrice|y|decimal|最新成交价
 
 period
 
