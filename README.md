@@ -463,7 +463,7 @@ SignatureVersion|y|string|版本
 SignatureMethod|y|string|签名方法||HmacSHA256
 Signature|y|string|ApiSecret
 Timestamp|y|string|时间戳
-step|y|int|时间：秒||60,5*60,15*60,30*60,60*60（1小时）,24*60*60（1天）,7*24*60*60（1周）,30*24*60*60（1月）
+step|y|int|时间：秒||60,300（5分钟）,900（15分钟）,1800（30分钟）,3600（1小时）,86400（1天）,604800（1周）,2592000（1月）
 symbol|y|string|交易对||例：btc_gset
 
 返回 : 
