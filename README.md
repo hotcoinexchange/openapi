@@ -464,7 +464,7 @@ SignatureMethod|y|string|签名方法||HmacSHA256
 Signature|y|string|ApiSecret
 Timestamp|y|string|时间戳
 step|y|int|时间：秒||60,300（5分钟）,900（15分钟）,1800（30分钟）,3600（1小时）,86400（1天）,604800（1周）,2592000（1月）
-symbol|y|string|交易对||例：btc_gset
+symbol|y|string|交易对||例：btc_gavc
 
 返回 : 
 
@@ -585,9 +585,9 @@ data|y|array（array）|最后一个k线数据，格式同上，但只有一个
             54598.5,
             0
          ]],
-         "marketFrom": "btc_gset",
+         "marketFrom": "btc_gavc",
          "type": 60,
-         "coinVol": "btc_gset"
+         "coinVol": "btc_gavc"
       },
       "depth":{
          "date": 1527837163,
@@ -636,7 +636,7 @@ SignatureMethod|y|string|签名方法||HmacSHA256
 Signature|y|string|ApiSecret
 Timestamp|y|string|时间戳
 count|y|int|Trades条数||0
-symbol|y|string|交易对||例：btc_gset
+symbol|y|string|交易对||例：btc_gavc
 
 返回 : 
 
@@ -675,7 +675,7 @@ type|y|string|成交类型||"买入","卖出"
    "time": 1536315868962,
    "data":    {
      "sellSymbol": "BTC",
-     "buySymbol": "GSET",
+     "buySymbol": "GAVC",
      "trades": [
        {
           "price": 0.007,
