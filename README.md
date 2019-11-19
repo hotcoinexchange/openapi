@@ -253,7 +253,7 @@ status|y|string|状态||未成交、部分成交、完全成交、撤单处理�
    }
 }
 ```
-### 委单详情：/v1/order/counterpartiesById
+### 成交详情：/v1/order/counterpartiesById
 
 参数：
 
