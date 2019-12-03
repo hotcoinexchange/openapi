@@ -120,8 +120,8 @@ Signature|y|string|ApiSecret||
 Timestamp|y|string|时间戳||
 symbol|y|string|交易对||例：btc_usdt
 type|y|string|类型||"buy" ,”sell"
-tradeAmount|y|decimal|数量||
-tradePrice|y|decimal|价钱||
+tradeAmount|y|number|数量||
+tradePrice|y|number|价钱||
 
 返回：
 
@@ -213,14 +213,14 @@ data
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 types|y|string|委单类型||买单 、卖单
-leftcount|y|decimal|未成交
-fees|y|decimal|手续费
-last|y|decimal|当前委单最新成交价
-count|y|decimal|数量
-successamount|y|decimal|已成交总价
+leftcount|y|number|未成交
+fees|y|number|手续费
+last|y|number|当前委单最新成交价
+count|y|number|数量
+successamount|y|number|已成交总价
 source|y|string|来源||API、WEB、APP
 type|y|int|类型代码||0（买单），1（卖单）
-price|y|decimal|价钱
+price|y|number|价钱
 buysymbol|n|string|买符号
 sellsymbol|n|string|卖符号
 time|y|string|创建时间
@@ -291,9 +291,9 @@ sysmbol|y|string|交易对
 entrustType|y|int|委单类型 0 买单 1 卖单
 entrustId|y|bigint|委单ID
 matchId|y|bigint|成交ID
-amount|y|decimal|成交总价
-prize|y|decimal|价格
-count|y|decimal|数量
+amount|y|number|成交总价
+prize|y|number|价格
+count|y|number|数量
 createTime|y|string|创建时间
 
 返回json
@@ -362,12 +362,12 @@ id|y|bigint|委单id
 time|y|string|下单时间
 types|y|string|委单类型|| 买单、卖单
 source|y|string|委单来源||"WEB"，"APP"，"API"
-price|y|decimal|下单价格
-count|y|decimal|下单数量
-leftcount|y|decimal|未成交数量
-last|y|decimal|成交价格
-successamount|y|decimal|成交总价
-fees|y|decimal|手续费
+price|y|number|下单价格
+count|y|number|下单数量
+leftcount|y|number|未成交数量
+last|y|number|成交价格
+successamount|y|number|成交总价
+fees|y|number|手续费
 status|y|string|委单状态||未成交、部分成交、完全成交、撤单处理中、已撤销
 type|y|int|委单类型||	0( "买单"),1( "卖单")
 buysymbol|y|string|币种类型符号
@@ -473,17 +473,17 @@ symbol|y|string|交易对||例：btc_gavc
 code|y|int|状态码
 msg|n|string|返回消息
 time|y|long|当前毫秒数
-data|y|array(array(float))|K线数据
+data|y|array(array(number))|K线数据
 
 data<br>
 
 [[ <br>
    1527820200000,   //int 时间<br>
-   54598.5,         //float  开<br>
-   54598.5,         //float  高<br>
-   54598.5,         //float  低<br>
-   54598.5,         //float  收<br>
-   0.0000          //float  量<br>
+   54598.5,         //number  开<br>
+   54598.5,         //number  高<br>
+   54598.5,         //number  低<br>
+   54598.5,         //number  收<br>
+   0.0000          //number  量<br>
    ],<br>
    ......<br>
 ]<br>
@@ -555,7 +555,7 @@ depth
 bids|y|array(array(long))|买盘,[price(成交价), amount(成交量)]
 asks|y|array(array(long))|卖盘,[price(成交价), amount(成交量)]
 date|y|long|时间戳
-lastPrice|y|decimal|最新成交价
+lastPrice|y|number|最新成交价
 
 period
 
@@ -724,8 +724,8 @@ data
 
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-netassets|y|decimal|净资产，单位为gavc
-totalassets|y|decimal|总资产，单位为gavc
+netassets|y|number|净资产，单位为gavc
+totalassets|y|number|总资产，单位为gavc
 wallet|y|array(object)|钱包列表
 
 wallet
@@ -735,8 +735,8 @@ wallet
 coinName|y|long|币种名称
 uid|y|int|用户ID
 coinId|y|int|币种ID
-total|y|decimal|可用
-frozen|y|decimal|冻结
+total|y|number|可用
+frozen|y|number|冻结
 symbol|y|string|币种symbol
 shortName|y|string|币种简称
 
@@ -795,8 +795,8 @@ Signature|y|string|ApiSecret||
 Timestamp|y|string|时间戳||
 symbol|y|string|交易对||例：btc_usdt
 type|y|string|类型||"buy" ,”sell"
-tradeAmount|y|decimal|数量||
-tradePrice|y|decimal|价钱||
+tradeAmount|y|number|数量||
+tradePrice|y|number|价钱||
 leverAcctid|y|string|杠杆子账户id，对应开户接口的clientId||
 
 返回：
@@ -886,8 +886,8 @@ data
 
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-netassets|y|decimal|净资产
-totalassets|y|decimal|总资产
+netassets|y|number|净资产
+totalassets|y|number|总资产
 wallet|y|array(object)|钱包列表
 
 wallet
@@ -897,8 +897,8 @@ wallet
 coinName|y|long|币种名称
 uid|y|int|用户ID
 coinId|y|int|币种ID
-total|y|decimal|可用
-frozen|y|decimal|冻结
+total|y|number|可用
+frozen|y|number|冻结
 symbol|y|string|币种symbol
 shortName|y|string|币种简称
 
