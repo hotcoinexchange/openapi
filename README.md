@@ -955,9 +955,9 @@ SignatureMethod|y|string|签名方法||HmacSHA256
 Signature|y|string|ApiSecret
 Timestamp|y|string|时间戳
 symbol|y|string|交易对||例：btc_usdt
-types|n|string|查询的订单类型组合，使用','分割||buy-market：市价买, sell-market：市价卖, buy-limit：限价买, sell-limit：限价卖
-start-date|n|string|查询开始日期, 日期格式yyyy-mm-dd|-1d 查询结束日期的前1天|取值范围 [((end-date) – 1), (end-date)] ，查询窗口最大为2天，窗口平移范围为最近61天
-end-date|n|string|查询结束日期, 日期格式yyyy-mm-dd|today|取值范围 [(today-60), today] ，查询窗口最大为2天，窗口平移范围为最近61天
+types|n|string|查询的订单类型组合，使用','分割||0：买, 1：卖
+startDate|n|string|查询开始日期, 日期格式yyyy-mm-dd|-1d 查询结束日期的前1天|取值范围 [((endDate) – 1), (endDate)] ，查询窗口最大为2天，窗口平移范围为最近61天
+endDate|n|string|查询结束日期, 日期格式yyyy-mm-dd|today|取值范围 [(today-60), today] ，查询窗口最大为2天，窗口平移范围为最近61天
 from|n|string|查询起始 ID|订单成交记录ID（最大值）|
 direct|n|string|查询方向|默认 next， 成交记录 ID 由大到小排序|prev 向前，时间（或 ID）正序；next 向后，时间（或 ID）倒序）
 size|n|string| 查询记录大小|100|[1，100]
@@ -981,21 +981,14 @@ entrustdetail
 
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-created-at|y|long|成交时间
-filled-amount|y|string|成交数量
-filled-fees|y|string|成交手续费
+createdAt|y|long|成交时间
+filledAmount|y|string|成交数量
+filledFees|y|string|成交手续费
 id|y|long|订单成交记录id
-match-id|y|long|撮合id
-order-id|y|long|订单id
+matchId|y|long|撮合id
+orderId|y|long|订单id
 price|y|string|成交价格
-type|y|string|订单类型||buy-market：市价买, sell-market：市价卖, buy-limit：限价买, sell-limit：限价卖
+type|y|string|订单类型||0：买, 1：卖
 role|y|string|成交角色||taker,maker
 
-start-date,end-date 相关错误码
-错误码|对应错误场景
-
-* invalid_interval|start date小于end date; 或者 start date 与end date之间的时间间隔大于2天
-
-* invalid_start_date|start date是一个61天之前的日期；或者start date是一个未来的日期
-* invalid_end_date|end date 是一个61天之前的日期；或者end date是一个未来的日期
 
