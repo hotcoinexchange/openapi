@@ -782,7 +782,7 @@ shortName|y|string|币种简称
    }
 }
 ```
-### 杠杆下单：/v1/order/leverorder
+### 杠杆下单（暂未开放）：/v1/order/leverorder
 
 参数：
 
@@ -827,7 +827,7 @@ ID|y|bigint|订单id||
         }
 }
 ```
-### 订单取消：/v1/order/levercancel
+### 订单取消（暂未开放）：/v1/order/levercancel
 
 参数：
 
