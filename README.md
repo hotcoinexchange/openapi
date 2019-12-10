@@ -943,7 +943,7 @@ shortName|y|string|币种简称
    }
 }
 ```
-### 【未上线】 当前和历史成交记录 GET /v1/order/matchresults
+### 当前和历史成交记录 GET /v1/order/matchresults
 
 参数：
 
