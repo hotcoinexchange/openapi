@@ -77,9 +77,9 @@ public class ApiDemo  {
     		}else if("POST".equals(httpMethod.toUpperCase())) {
     			System.out.println(post(url, params));
     		}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
     }
     
     
@@ -109,12 +109,12 @@ public class ApiDemo  {
         con.setRequestProperty("Charset", "UTF-8");
         con.setRequestMethod("GET");
         int responseCode = con.getResponseCode();
-		if (responseCode < 200 || responseCode >= 300) {
-			System.out.println("Request failed:" + responseCode);
-			return null;
-		}
-		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-		StringWriter writer = new StringWriter();
+	if (responseCode < 200 || responseCode >= 300) {
+		System.out.println("Request failed:" + responseCode);
+		return null;
+	}
+	BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+	StringWriter writer = new StringWriter();
         char[] chars = new char[1024];
         int count = 0;
         while ((count = in.read(chars)) > 0) {
@@ -132,34 +132,34 @@ public class ApiDemo  {
      */
     public static String post(String url,Map<String, Object> params) throws Exception {
     	URL obj = new URL(url);
-		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-		con.setRequestProperty("Charset", "UTF-8");
-		con.setRequestMethod("POST");
-		con.setConnectTimeout(30 * 1000);
-		con.setReadTimeout(100 * 1000);
-		con.setDoOutput(true);
-		if(params != null) {
-			DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-			StringBuffer httpParams = new StringBuffer();
-			for (Map.Entry<String, Object> entry : params.entrySet()) {
-	             String key = entry.getKey();
-	             String value = entry.getValue().toString();
-	             httpParams.append(key).append("=").append(URLEncoder.encode(value,"UTF-8")).append("&");
-	        }
-			if(httpParams.length() > 0) {
-				httpParams.deleteCharAt(httpParams.length() - 1);
-			}
-			wr.writeBytes(httpParams.toString());
- 			wr.flush();
- 			wr.close();
-		}
-		int responseCode = con.getResponseCode();
-		if (responseCode < 200 || responseCode >= 300) {
-			System.out.println("Request failed:" + responseCode);
-			return null;
-		}
-		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-		StringWriter writer = new StringWriter();
+	HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+	con.setRequestProperty("Charset", "UTF-8");
+	con.setRequestMethod("POST");
+	con.setConnectTimeout(30 * 1000);
+	con.setReadTimeout(100 * 1000);
+	con.setDoOutput(true);
+	if(params != null) {
+	DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+	StringBuffer httpParams = new StringBuffer();
+	for (Map.Entry<String, Object> entry : params.entrySet()) {
+	     String key = entry.getKey();
+	     String value = entry.getValue().toString();
+	     httpParams.append(key).append("=").append(URLEncoder.encode(value,"UTF-8")).append("&");
+	}
+	if(httpParams.length() > 0) {
+		httpParams.deleteCharAt(httpParams.length() - 1);
+	}
+	wr.writeBytes(httpParams.toString());
+	wr.flush();
+	wr.close();
+	}
+	int responseCode = con.getResponseCode();
+	if (responseCode < 200 || responseCode >= 300) {
+		System.out.println("Request failed:" + responseCode);
+		return null;
+	}
+	BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+	StringWriter writer = new StringWriter();
         char[] chars = new char[1024];
         int count = 0;
         while ((count = in.read(chars)) > 0) {
@@ -189,10 +189,10 @@ public class ApiDemo  {
              String key = entry.getKey();
              String value = entry.getValue().toString();
              try {
-				sb.append(key).append('=').append(URLEncoder.encode(value, "UTF-8")).append('&');
-			} catch (UnsupportedEncodingException e) {
-				e.printStackTrace();
-			}
+		sb.append(key).append('=').append(URLEncoder.encode(value, "UTF-8")).append('&');
+	     } catch (UnsupportedEncodingException e) {
+		e.printStackTrace();
+	     }
          }
          sb.deleteCharAt(sb.length() - 1);
          Mac hmacSha256;
@@ -220,12 +220,12 @@ public class ApiDemo  {
      * @param pattern
      * @return
      */
-	static public String format(Date date,String pattern) {
-		Instant instant = date.toInstant();
-	    ZoneId zone = ZoneId.systemDefault();
-	    LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, zone);
-	    return DateTimeFormatter.ofPattern(pattern).format(localDateTime);
-	}
+    static public String format(Date date,String pattern) {
+	Instant instant = date.toInstant();
+	ZoneId zone = ZoneId.systemDefault();
+	LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, zone);
+        return DateTimeFormatter.ofPattern(pattern).format(localDateTime);
+    }
 	
 	
 	/**
@@ -239,6 +239,6 @@ public class ApiDemo  {
    	//获得夏令时  时差
    	int dstoff = cal.get(Calendar.DST_OFFSET);
    	cal.add(Calendar.MILLISECOND, - (offset + dstoff));
-		return cal.getTime();
+	return cal.getTime();
    }
 }
