@@ -991,15 +991,15 @@ price|y|string|成交价格
 type|y|string|订单类型||0：买, 1：卖
 role|y|string|成交角色||taker,maker
 
-### 批量撤单 POST /v1/order/batchCancelOpenOrders  开发中
+### 批量撤单 POST /v1/order/batchCancelOrders  开发中
 `注意：此接口只提交取消请求，实际取消结果需要通过订单状态，撮合状态等接口来确认。`
 
 参数：
 
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-symbols|y|string|交易代码列表（最多10 个symbols，多个交易代码间以逗号分隔），btcusdt, ethbtc...（取值参考/v1/common/symbols）
-side|n|string|买卖交易方向
+
+orderIds|y|list|撤销订单ID列表||单次不超过100个订单id
 
 返回 : 
 
