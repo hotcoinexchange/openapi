@@ -337,7 +337,7 @@ Timestamp|y|string|时间戳
 symbol|y|string|交易对||例：btc_usdt
 type|n|int|类型|0|0表示全部 1表示当前 2表示历史
 page|n|int|页码|1|
-count|y|int|条数|7
+count|y|int|条数|7|[1-100] 最大100条
 
 返回：
 
