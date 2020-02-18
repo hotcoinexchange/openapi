@@ -109,8 +109,10 @@ symbol 规则： 基础币种+计价币种。如BTC/USDT，symbol为btc_usdt；E
 
 ##接口列表
 
-[下单 /v1/order/place](#下单)
-[订单取消 /v1/order/cancel](#订单取消)
+- [下单 /v1/order/place](#下单)
+- [订单取消 /v1/order/cancel](#订单取消)
+- [委单详情 /v1/order/detailById](#委单详情)
+- [成交详情 /v1/order/counterpartiesById](#成交详情)
 
 
 
@@ -196,6 +198,7 @@ time|y|long|当前毫秒数
 }
 ```
 ### 委单详情
+
 /v1/order/detailById
 
 参数：
@@ -265,7 +268,9 @@ status|y|string|状态||未成交、部分成交、完全成交、撤单处理�
    }
 }
 ```
-### 成交详情：/v1/order/counterpartiesById
+### 成交详情
+
+/v1/order/counterpartiesById
 
 参数：
 
