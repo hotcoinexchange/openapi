@@ -108,11 +108,16 @@ https://hotcoin.top/v1/order/place?AccessKeyId=AccessKeyHotcoin123456789&Signatu
 symbol 规则： 基础币种+计价币种。如BTC/USDT，symbol为btc_usdt；ETH/BTC， symbol为eth_btc。以此类推。<br>
 
 ##接口列表
-[订单取消](#订单取消)
+
+[下单 /v1/order/place](#下单)
+[订单取消 /v1/order/cancel](#订单取消)
+
 
 
 ## api明细
-### 下单：/v1/order/place
+### 下单
+
+/v1/order/place
 
 参数：
 
