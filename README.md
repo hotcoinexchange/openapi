@@ -106,6 +106,11 @@ SecretKeyHotcoin123456789 <br>
 https://hotcoin.top/v1/order/place?AccessKeyId=AccessKeyHotcoin123456789&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T16%3A22%3A06.123Z&symbol=btc_gavc&tradeAmount=0.1&tradePrice=40000&type=buy&Signature=2oEC%2ByhkHTsNkgPUq4ZB%2F5mlY7EZAtUDWOQ5EO01D%2BI%3D <br>
 
 symbol 规则： 基础币种+计价币种。如BTC/USDT，symbol为btc_usdt；ETH/BTC， symbol为eth_btc。以此类推。<br>
+
+##接口列表
+[订单取消](#订单取消)
+
+
 ## api明细
 ### 下单：/v1/order/place
 
@@ -153,7 +158,8 @@ ID|y|bigint|订单id||
 ```
 
 
-### 订单取消：/v1/order/cancel
+### 订单取消
+/v1/order/cancel
 
 参数：
 
@@ -184,7 +190,8 @@ time|y|long|当前毫秒数
    "data": null
 }
 ```
-### 委单详情：/v1/order/detailById
+### 委单详情
+/v1/order/detailById
 
 参数：
 
