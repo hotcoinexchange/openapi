@@ -113,6 +113,13 @@ symbol 规则： 基础币种+计价币种。如BTC/USDT，symbol为btc_usdt；E
 - [订单取消 /v1/order/cancel](#订单取消)
 - [委单详情 /v1/order/detailById](#委单详情)
 - [成交详情 /v1/order/counterpartiesById](#成交详情)
+- [获取委单列表 /v1/order/entrust](#获取委单列表)
+- [获取k线数据 /v1/ticker](#获取k线数据)
+- [获取深度数据 /v1/depth](#获取深度数据)
+- [获取实时成交数据 /v1/trade](#获取实时成交数据)
+- [获取用户余额 /v1/balance](#获取用户余额)
+- [当前和历史成交记录 ](#当前和历史成交记录)
+
 
 
 
@@ -340,7 +347,9 @@ createTime|y|string|创建时间
 ```
 
 
-### 获取委单列表：/v1/order/entrust
+### 获取委单列表
+
+/v1/order/entrust
 
 参数：
 
@@ -717,7 +726,9 @@ type|y|string|成交类型||"买入","卖出"
 }
 ```
 
-获取用户余额：/v1/balance
+### 获取用户余额
+
+/v1/balance
 
 参数：
 
@@ -961,7 +972,9 @@ shortName|y|string|币种简称
    }
 }
 ```
-### 当前和历史成交记录 GET /v1/order/matchresults
+### 当前和历史成交记录 
+
+GET /v1/order/matchresults
 
 参数：
 
