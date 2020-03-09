@@ -1023,7 +1023,9 @@ price|y|string|成交价格
 type|y|string|订单类型||0：买, 1：卖
 role|y|string|成交角色||taker,maker
 
-### 批量撤单 POST /v1/order/batchCancelOrders 
+### 批量撤单 
+
+POST /v1/order/batchCancelOrders 
 `注意：此接口只提交取消请求，实际取消结果需要通过订单状态，撮合状态等接口来确认。`
 
 参数：
