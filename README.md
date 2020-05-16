@@ -122,8 +122,8 @@ symbol 规则： 基础币种+计价币种。如BTC/USDT，symbol为btc_usdt；E
 - [批量撤单 /v1/order/batchCancelOrders ](#批量撤单)
 
 ## Demo
-[Demo for java](https://github.com/hotcoinex/openapi/blob/master/ApiDemo.java)
-[Demo for Python](https://github.com/hotcoinex/openapi/blob/master/ApiDemo.py)
+- [Demo for java](https://github.com/hotcoinex/openapi/blob/master/ApiDemo.java)
+- [Demo for Python](https://github.com/hotcoinex/openapi/blob/master/ApiDemo.py)
 
 
 
