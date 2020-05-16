@@ -1,4 +1,4 @@
-# API文档
+# Hotcoin API
 ## 安全认证
 AccessKey为API 访问密钥，SecretKey为用户对请求进行签名的密钥。
 重要提示：这两个密钥与账号安全紧密相关，无论何时都请勿向其它人透露
@@ -121,6 +121,9 @@ symbol 规则： 基础币种+计价币种。如BTC/USDT，symbol为btc_usdt；E
 - [当前和历史成交记录 /v1/order/matchresults ](#当前和历史成交记录)
 - [批量撤单 /v1/order/batchCancelOrders ](#批量撤单)
 
+## Demo
+[Demo for java](https://github.com/hotcoinex/openapi/blob/master/ApiDemo.java)
+[Demo for Python](https://github.com/hotcoinex/openapi/blob/master/ApiDemo.py)
 
 
 
