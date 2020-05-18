@@ -985,7 +985,7 @@ SignatureMethod|y|string|签名方法||HmacSHA256
 Signature|y|string|ApiSecret
 Timestamp|y|string|时间戳
 symbol|y|string|交易对||例：btc_usdt
-types|n|string|查询的订单类型组合，使用','分割||0：买, 1：卖
+types|y|string|查询的订单类型组合，使用','分割||0：买, 1：卖
 startDate|n|string|查询开始日期, 日期格式yyyy-mm-dd|-1d 查询结束日期的前1天|取值范围 [((endDate) – 1), (endDate)] ，查询窗口最大为2天，窗口平移范围为最近61天
 endDate|n|string|查询结束日期, 日期格式yyyy-mm-dd|today|取值范围 [(today-60), today] ，查询窗口最大为2天，窗口平移范围为最近61天
 from|n|string|查询起始 ID|订单成交记录ID（最大值）|
