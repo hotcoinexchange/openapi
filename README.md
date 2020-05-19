@@ -75,14 +75,14 @@ type=buy <br>
 
 按照以上顺序，将各参数使用字符’&’连接。<br>
 
-AccessKeyId=AccessKeyHotcoin123456789&id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T16%3A22%3A06.123Z&symbol=btc_gavc&tradeAmount=0.1&tradePrice=40000&type=buy <br>
+AccessKeyId=AccessKeyHotcoin123456789&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T16%3A22%3A06.123Z&symbol=btc_gavc&tradeAmount=0.1&tradePrice=40000&type=buy <br>
 
 组成最终的要进行签名计算的字符串如下：<br>
 
 GET\n <br>
 hkapi.hotcoin.top\n <br>
 /v1/order/place\n <br>
-AccessKeyId=AccessKeyHotcoin123456789&id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T16%3A22%3A06.123Z&symbol=btc_gavc&tradeAmount=0.1&tradePrice=40000&type=buy <br>
+AccessKeyId=AccessKeyHotcoin123456789&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T16%3A22%3A06.123Z&symbol=btc_gavc&tradeAmount=0.1&tradePrice=40000&type=buy <br>
 
 计算签名，将以下两个参数传入加密哈希函数： <br>
 要进行签名计算的字符串 <br>
@@ -90,7 +90,7 @@ AccessKeyId=AccessKeyHotcoin123456789&id=1234567890&SignatureMethod=HmacSHA256&S
 GET\n <br>
 hkapi.hotcoin.top\n <br>
 /v1/order/place\n <br>
-AccessKeyId=AccessKeyHotcoin123456789&id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T16%3A22%3A06.123Z&symbol=btc_gavc&tradeAmount=0.1&tradePrice=40000&type=buy <br>
+AccessKeyId=AccessKeyHotcoin123456789&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T16%3A22%3A06.123Z&symbol=btc_gavc&tradeAmount=0.1&tradePrice=40000&type=buy <br>
 
 进行签名的密钥（SecretKey）<br>
 
