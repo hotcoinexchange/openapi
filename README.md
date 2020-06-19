@@ -120,6 +120,7 @@ symbol 规则： 基础币种+计价币种。如BTC/USDT，symbol为btc_usdt；E
 - [获取用户余额 /v1/balance](#获取用户余额)
 - [当前和历史成交记录 /v1/order/matchresults ](#当前和历史成交记录)
 - [批量撤单 /v1/order/batchCancelOrders ](#批量撤单)
+- [批量下单 /v1/order/batchOrders ](#批量下单)
 
 ## Demo
 - [Demo for java](https://github.com/hotcoinex/openapi/blob/master/ApiDemo.java)
