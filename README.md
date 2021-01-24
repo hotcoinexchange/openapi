@@ -178,7 +178,7 @@ ID|y|bigint|订单id||
 
 
 ### 订单取消
-注：撤销订单请求为异步报单模式，需要调用/v1/order/detailById接口查询订单状态进行确认。
+**注：撤销订单请求为异步报单模式，需要调用/v1/order/detailById接口查询订单状态进行确认。**
 POST /v1/order/cancel
 
 参数：
