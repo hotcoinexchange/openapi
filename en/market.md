@@ -17,7 +17,7 @@ return：
 
 Parameter Name|Mandatory|Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-status|y|string|Status ||ture：ok，false：error
+status|y|string|Status ||ok,error
 timestamp|y|long|Current millisseconds||
 ticker|y|list|data||
 
@@ -25,7 +25,7 @@ ticker:
 
 Parameter Name|Mandatory|Type|Description|Default|ValueRange
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-symbol|y|string|Pairs symbol||Sell Crypto Abbrev._Buy Crypto Abbrev.Abbrev.，eg：btc_usdt
+symbol|y|string|Pairs symbol||Sell Crypto Abbrev_Buy Crypto Abbrev，eg：btc_usdt
 last|y|number|Last Price||
 buy|y|number|bid||
 sell|y|number|ask||
@@ -76,15 +76,15 @@ data|y|array(array(number))|Klinedata
 data<br>
 
 [[ <br>
-   1527820200000,   //int Time<br>
-   54598.5,         //number  Open<br>
-   54598.5,         //number  High<br>
-   54598.5,         //number  Low<br>
-   54598.5,         //number  Close<br>
-   0.0000          //number  sum<br>
-   ],<br>
-   ......<br>
-]<br>
+   1527820200000,   //int Time
+   54598.5,         //number  Open
+   54598.5,         //number  High
+   54598.5,         //number  Low
+   54598.5,         //number  Close
+   0.0000          //number  Volumn
+   ],
+   ......
+]
 
 
 returnjson
@@ -122,7 +122,7 @@ Parameter：
 Parameter Name|Mandatory|Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 symbol|y|string|Pairs||Example：btc_gavc
-step|n|int|Add the parameter to check the latest Kline data，Type is time，unit second||60,3*60,5*60,15*60,30*60,60*60（1h）,24*60*60（1d）,7*24*60*60（1w）,30*24*60*60（1mon）
+step|n|int|Market depth aggregation level, details below. unit second||60,3*60,5*60,15*60,30*60,60*60（1h）,24*60*60（1d）,7*24*60*60（1w）,30*24*60*60（1mon）
 
 
 return :
@@ -137,7 +137,7 @@ data|y|object|Transaction Depth data
 Parameter Name|Mandatory|Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 depth|y|object
-period|n|object|Values only display when uploadingtep
+period|n|object|Values only display when uploading step field
 
 depth
 
@@ -152,10 +152,10 @@ period
 
 Parameter Name|Mandatory|Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-marketFrom|y|string|input parameterssymbol
-coinVol|y|string|input parameterssymbol
-type|y|long|input parametersstep,Time
-data|y|array（array）|The last Kline has the same format as above,with the sole
+marketFrom|y|string|input parameters symbol||
+coinVol|y|string|input parameters symbol||
+type|y|long|input parameters step,Time||
+data|y|array（array）|The last Kline has the same format as above,with the sole||
 
 
 
