@@ -4,10 +4,14 @@
 - [Get kline data /v1/ticker](#Get kline data)
 - [Get depth data /v1/depth](#Get depth data)
 - [Get real time data /v1/trade](#Get real time data)
+- [Get Realtime ticker data /v1/market/ticker](#ticker)
+- [Get kline data /v1/ticker](#kline)
+- [Get depth data /v1/depth](#depth)
+- [Get trade data /v1/trade](#trades)
 
 ## API Details
 
-### real time ticker data 
+### ticker 
 GET /v1/market/ticker
 
  parameter：
@@ -54,7 +58,7 @@ return json
 		]
 }
 ```
-### Get kline data
+### kline
 GET /v1/ticker
  parameter：
 
@@ -114,7 +118,7 @@ returnjson
 }
 ```
 
-### Get Depth Data
+### depth
 GET /v1/depth
 Parameter：
 
@@ -214,7 +218,7 @@ returnjson
    }
 }
 ```
-### Get real time transaction data
+### trades
 GET /v1/trade
 
 Parameter：
