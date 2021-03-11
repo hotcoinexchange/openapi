@@ -156,6 +156,15 @@ msg|y|string|消息||
 time|y|long|当前毫秒数||
 data|y|object|数据||
 
+msg 范围
+中文| English
+------------ | ------------ 
+非法请求|Illegal request
+请使用正确的数量| Illegal tradeAmount value
+请使用正确的价格| Illegal tradePrice value
+币种ID错误| Illegal symbol format 
+
+
 data
 
 参数名称|是否必须|类型|描述|默认值|取值范围
