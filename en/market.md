@@ -22,8 +22,7 @@ ticker|y|list|data||
 
 ticker:
 
-Parameter Name|Mandatory|Type|Description|Default|Value Range
-
+Parameter Name|Mandatory|Type|Description|Default|ValueRange
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 symbol|y|string|Pairs symbol||Sell Crypto Abbrev._Buy Crypto Abbrev.Abbrev.，eg：btc_usdt
 last|y|number|Last Price||
@@ -60,7 +59,6 @@ GET /v1/ticker
  parameter：
 
 Parameter Name|Mandatory|Type|Description|Default|Value Range
-
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 step|y|int|Time：sec||60（1 min）,300（5mins）,900（15mins）,1800（30mins）,3600（1h）,86400（1d）,604800（1w）,2592000（1mon）
 symbol|y|string|Pairs||Example：btc_gavc
@@ -68,7 +66,6 @@ symbol|y|string|Pairs||Example：btc_gavc
  return : 
 
 Parameter Name|Mandatory|Type|Description|Default|Value Range
-
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 code|y|int|Status
 msg|n|string|return message 
@@ -122,7 +119,6 @@ GET /v1/depth
 Parameter：
 
 Parameter Name|Mandatory|Type|Description|Default|Value Range
-
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 symbol|y|string|Pairs||Example：btc_gavc
 step|n|int|Add the parameter to check the latest Kline data，Type is time，unit second||60,3*60,5*60,15*60,30*60,60*60（1h）,24*60*60（1d）,7*24*60*60（1w）,30*24*60*60（1mon）
@@ -131,7 +127,6 @@ step|n|int|Add the parameter to check the latest Kline data，Type is time，uni
 return :
 
 Parameter Name|Mandatory|Type|Description|Default|Value Range
-
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 code|y|int|Status
 msg|n|string|returnmessage
@@ -139,7 +134,6 @@ time|y|long|Current millisseconds
 data|y|object|Transaction Depth data
 
 Parameter Name|Mandatory|Type|Description|Default|Value Range
-
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 depth|y|object
 period|n|object|Values only display when uploadingtep
@@ -147,7 +141,6 @@ period|n|object|Values only display when uploadingtep
 depth
 
 Parameter Name|Mandatory|Type|Description|Default|Value Range
-
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 bids|y|array(array(long))|Sell,[price(Transaction price), amount(Transaction Vol.)]
 asks|y|array(array(long))|Sell,[price(Transaction price), amount(Vol.)]
@@ -157,7 +150,6 @@ lastPrice|y|number|Last Price
 period
 
 Parameter Name|Mandatory|Type|Description|Default|Value Range
-
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 marketFrom|y|string|input parameterssymbol
 coinVol|y|string|input parameterssymbol
@@ -228,7 +220,6 @@ GET /v1/trade
 Parameter：
 
 Parameter Name|Mandatory|Type|Description|Default|Value Range
-
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 count|y|int|Tradesitems||0
 symbol|y|string|Pairs||Example：btc_gavc
@@ -236,7 +227,6 @@ symbol|y|string|Pairs||Example：btc_gavc
 return : 
 
 Parameter Name|Mandatory|Type|Description|Default|Value Range
-
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 code|y|int|Status 
 msg|n|string|return info 
@@ -246,7 +236,6 @@ data|y|object| real time transaction
 data
 
 Parameter Name|Mandatory|Type|Description|Default|Value Range
-
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 trades|y|array(object)|tradesdata
 sellSymbol|y|string|sellSymbol
@@ -255,7 +244,6 @@ buySymbol|y|string|buySymbol
 trades
 
 Parameter Name|Mandatory|Type|Description|Default|Value Range
-
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 price|y|long|Transaction price 
 amount|y|string|Transaction Vol. 
@@ -264,7 +252,7 @@ time|y|string|Transactiontime
 en_type|y|string|direction||"bid"(buy),"ask"(sell)
 type|y|string|TransactionType||"Buy","sell"
 
-returnjson
+return json
 
 ```json
 {
