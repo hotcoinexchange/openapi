@@ -1,9 +1,6 @@
 
 ## API List
-- [ real time ticker data /v1/market/ticker](#real time ticker data )
-- [Get kline data /v1/ticker](#Get kline data)
-- [Get depth data /v1/depth](#Get depth data)
-- [Get real time data /v1/trade](#Get real time data)
+
 - [Get Realtime ticker data /v1/market/ticker](#ticker)
 - [Get kline data /v1/ticker](#kline)
 - [Get depth data /v1/depth](#depth)
