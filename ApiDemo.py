@@ -29,7 +29,9 @@ def paramsSign(params, paramsPrefix, accessSecret):
 
 
 def http_post_request(url, params, timeout=10):
-    response = requests.post(url, params, timeout=timeout)
+    # lang valueRange ： en_US,ko_KR,zh_CN
+    header = {'lang': 'en_US'} 
+    response = requests.post(url, params, timeout=timeout,headers=header)
     if response.status_code == 200:
         return response.json()
     else:
