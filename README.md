@@ -11,7 +11,7 @@ API 访问密钥（AccessKeyId） 您申请的 APIKEY 中的AccessKey。<br>
 时间戳（Timestamp） 您发出请求的时间 (UTC 时区)。在查询请求中包含此值有助于防止第三方截取您的请求。如：2017-05-11T16:22:06.123Z。再次强调是 (UTC 时区)  <br>
 调用的必需参数和可选参数。可以在每个方法的说明中查看这些参数及其含义。签名计算得出的值，用于确保签名有效和未被篡改。 <br>
 例：<br>
-https://hkapi.hotcoin.top/v1/order/place? <br>
+https://api.hotcoinfin.com/v1/order/place? <br>
 AccessKeyId=AccessKeyHotcoin123456789 <br>
 &symbol=btc_gavc <br>
 &type=buy <br>
@@ -28,7 +28,7 @@ API 请求在通过 Internet 发送的过程中极有可能被篡改。为了确
 规范要计算签名的请求 <br>
 因为使用 HMAC 进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。下面以下单请求为例进行说明 <br>
 
-https://hkapi.hotcoin.top/v1/order/place? <br>
+https://api.hotcoinfin.com/v1/order/place? <br>
 AccessKeyId=AccessKeyHotcoin123456789 <br>
 &SignatureMethod=HmacSHA256 <br>
 &SignatureVersion=2 <br>
