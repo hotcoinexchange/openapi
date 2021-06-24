@@ -14,12 +14,12 @@ ACCESS_KEY = "Your ACCESS_KEY"
 SECRET_KEY = "Your SECRET_KEY"
 ##########################################
 
-API_HOST = 'hkapi.hotcoin.top'
+API_HOST = 'api.hotcoinfin.com'
 API_RUL = 'https://' + API_HOST  # + API_TICKER_URI
 
 
 def paramsSign(params, paramsPrefix, accessSecret):
-    host = "hkapi.hotcoin.top"
+    host = "api.hotcoinfin.com"
     method = paramsPrefix['method'].upper()
     uri = paramsPrefix['uri']
     tempParams = urllib.parse.urlencode(sorted(params.items(), key=lambda d: d[0], reverse=False))
