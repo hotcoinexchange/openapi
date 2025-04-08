@@ -121,6 +121,8 @@ symbol 规则： 基础币种+计价币种。如BTC/USDT，symbol为btc_usdt；E
 - [当前和历史成交记录 /v1/order/matchresults ](#当前和历史成交记录)
 - [批量撤单 /v1/order/batchCancelOrders ](#批量撤单)
 - [批量下单 /v1/order/batchOrders ](#批量下单)
+- [获取服务器时间 /v1/time](#获取服务器时间)  
+  
 
 ## Demo
 - [Demo for java](https://github.com/hotcoinex/openapi/blob/master/ApiDemo.java)
@@ -1116,3 +1118,27 @@ data
 [{ID|y|bigint|订单id||
 errcode|n|string|返回错误码
 errmsg}]|n|string|返回错误描述
+
+
+### 服务器时间
+
+GET /v1/time
+
+参数：
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+AccessKeyId|y|string|访问key
+SignatureVersion|y|string|版本
+SignatureMethod|y|string|签名方法||HmacSHA256
+Signature|y|string|ApiSecret
+Timestamp|y|string|时间戳
+
+返回 : 
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+epoch|y|string|纪元时间
+iso|y|string|ISO时间
+timestamp|y|long|时间戳
+
